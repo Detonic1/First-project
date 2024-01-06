@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-left: 500px;   
+}
+
+.slide {
+    display: none;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    margin-bottom: 20px;
+    
+}
+
+
+
+
+
+#sage {
+    margin-right: 20px; 
+    padding: 10px 15px; 
+    transition: background-color 0.3s ease; 
+}
+
+.nav-button:hover {
+    background-color: #ddd; /* Change background color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styles for Navigation Bar */
+.navbar {
+    position: fixed; /* Fixed position */
+    top: 0; /* Top position */
+    right: 0; /* Right position */
+    background-color: #333; /* Background color */
+    padding: 10px; /* Padding */
+  }
+  
+  .navbar a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size */
+  }
+  
+  .navbar a:hover {
+    color: #ddd; /* Hover color */
+  }
+
+
+.upload-section {
+    display: flex;           
+    align-items: center; 
+    margin-left: -100px;    
+}
+
+.upload-icon {
+    display: flex;           
+    justify-content: center; 
+    align-items: center;     
+    width: 40px;            
+    height: 40px;            
+    border-radius: 50%;     
+    background-color: #007bff; 
+    color: white;             
+    font-size: 24px;          
+    margin-right: -100px;       
+}
+
+.upload-section span {
+    font-size: 16px;  
+    margin-right: -100px;        
+}
+
+
+
+/* ///////////////////////////////////////////// */
+/* body {
+    background: url(Meta101.jpg);
+    background-size: cover;
+  }
+   */
+  
