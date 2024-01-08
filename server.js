@@ -9,7 +9,21 @@ const port = 3000;
 const users = [];
 
 function generateBackgroundColor(email) {
-    return `linear-gradient(29.93deg, #42496f, rgba(66,73,111,0) 37.51%), linear-gradient(186.09deg, #434f6c, rgba(67,79,108,0) 39.79%), linear-gradient(235.04deg, #45637b 1.66%, rgba(69,99,123,0) 52.55%), linear-gradient(71.3deg, #725648 6.08%, rgba(114,86,72,0) 81.88%), linear-gradient(161.8deg, #795e65 5.13%, rgba(121,94,101,0) 23.4%), linear-gradient(293.67deg, #7f5e64 10.87%, rgba(126,94,98,0) 83.24%), linear-gradient(0deg, #fff, #fff), linear-gradient(0deg, hsla(0,0%,100%,.05), hsla(0,0%,100%,.05));`;
+    return `linear-gradient(29.93deg, #42496f,
+         rgba(66,73,111,0) 37.51%), 
+         linear-gradient(186.09deg, #434f6c, 
+            rgba(67,79,108,0) 39.79%), 
+            linear-gradient(235.04deg, 
+                #45637b 1.66%, rgba(69,99,123,0) 52.55%), 
+                linear-gradient(71.3deg, #725648 6.08%, 
+                    rgba(114,86,72,0) 81.88%), 
+                    linear-gradient(161.8deg, 
+                        #795e65 5.13%, rgba(121,94,101,0) 23.4%), 
+                        linear-gradient(293.67deg, #7f5e64 10.87%, 
+                            rgba(126,94,98,0) 83.24%), 
+                            linear-gradient(0deg, #fff, #fff),
+                             linear-gradient(0deg, hsla(0,0%,100%,.05),
+                              hsla(0,0%,100%,.05));`;
 
  
     
@@ -99,7 +113,7 @@ app.post('/submit-data', (req, res) => {
                         background-color: hsla(0,0%,100%,.4);
                         align-items: center;
                         gap: 20px;
-                        margin-top: 105px;
+                        margin-top: 12px;
                         border: 2px solid transparent;
                         padding: 10px;
                         border-radius: 10px;
@@ -121,24 +135,26 @@ app.post('/submit-data', (req, res) => {
                     .user-container {
                         text-align: center;
                         padding: 20px;
-                        margin-top: 168px;
-                        
+                        margin-top: 35px;
+                        font-size: 30px;
+                        color: white;
                         border-radius: 5px;
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+                        
                     }
                     .user-image {
                         width: 100px;
                         height: 100px;
                         border-radius: 50%;
-                     
-                        background-image: url();
+                        margin-top: 1px;
+                        background-image: url(${userInfo.image});
                         border-radius: 50%;
                         background-size: cover ;
                         background-repeat: no-repeat;
                         border: 1px solid red; 
                         padding: 0px;  
                         margin: 0px;
-                         overflow-clip-margin: content-box;
+                        overflow-clip-margin: content-box;
                         overflow: clip;
                         aspect-ratio: auto 150/ 150;
                         box-sizing: border-box;
