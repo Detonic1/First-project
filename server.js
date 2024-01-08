@@ -9,7 +9,7 @@ const port = 3000;
 const users = [];
 
 function generateBackgroundColor(email) {
-    return `linear-gradient(29.93deg, #42496f,
+ return `linear-gradient(29.93deg, #42496f,
          rgba(66,73,111,0) 37.51%), 
          linear-gradient(186.09deg, #434f6c, 
             rgba(67,79,108,0) 39.79%), 
@@ -28,7 +28,7 @@ function generateBackgroundColor(email) {
  
     
    
-    
+  
 }
 
 const storage = multer.diskStorage({
@@ -45,6 +45,7 @@ const upload = multer({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 app.use(express.static(path.join(__dirname, 'My Path to Tech')));
 
 app.post('/submit-data', (req, res) => {
@@ -75,9 +76,9 @@ app.post('/submit-data', (req, res) => {
                 <meta charset="UTF-8">
                 <title>User Profile</title>
                 <style>
-                    body {
+                  body {
                         background-image: ${userInfo.backgroundColor};
-                        /* Your other styles here */
+                       
                         background-repeat: no-repeat;
                         background-size: cover;
                         justify-content: center;
@@ -101,7 +102,7 @@ app.post('/submit-data', (req, res) => {
                         text-decoration: none;
                         color: white;
                         font-family: JetBrains mono;
-                        font-weight: bold; /* Making the text bolder */
+                        font-weight: bold;
                     }
                 a{
                     color: white;                  
@@ -120,7 +121,7 @@ app.post('/submit-data', (req, res) => {
                         width: 80%; /* Adjusting the width for responsiveness */
                         margin-left: auto;
                         margin-right: auto;
-                        max-width: 289px; /* Setting max-width to avoid too much stretching on zoom */
+                        max-width: 289px;
                     }
                     .logos img {
                         width: 50px;
@@ -148,7 +149,7 @@ app.post('/submit-data', (req, res) => {
                         border-radius: 50%;      
                         margin: 0 auto;          
                         display: block;          
-                        background-image: url(${userInfo.image});
+                        
                         background-size: cover;
                         background-repeat: no-repeat;
                         border: 1px solid darkgrey;   
@@ -177,10 +178,11 @@ app.post('/submit-data', (req, res) => {
                     
                         
                     }
+                   
                 </style>
             </head>
             <body>
-                  <div class="navbar">
+             <div class="navbar">
                     <a href="#">Resume</a>
                     <a href="#">Project</a>
                     <a href="#">About</a>
@@ -195,28 +197,28 @@ app.post('/submit-data', (req, res) => {
                        <div class="logos">
                         <div>
                         <a href="${userInfo.linkedin}" target="_blank"> 
-                        <img src="" alt="">
+                        <img src="linkedin.jpg">
                         <span>LinkedIn</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.github}" target="_blank"> 
-                        <img src="" alt="">
+                        <img src="github.png">
                         <span>GitHub</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.discord}" target="_blank">
-                        <img src="" alt="">
+                        <img src="discord.png"
                         <span>Discord</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="mailto:${userInfo.email}" target="_blank"> 
-                        <img src="" alt="">
+                        <img src="">
                         <span>Email</span>
                     </a>
                     
@@ -231,6 +233,7 @@ app.post('/submit-data', (req, res) => {
                 <div/>
 
 
+               
             </body>
             </html>
             `;
