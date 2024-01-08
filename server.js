@@ -84,12 +84,12 @@ app.post('/submit-data', (req, res) => {
                         align-items: center;
                         height: 100vh;
                     }
-                    /* Rest of your CSS styles */
+                    
                         .navbar {
                         display: flex;
                         background-color: rgba(0,0,0,.5);
                         justify-content: center;
-                        margin: 1px;
+                        margin: 16px;
                         border-radius: 50px;
                         padding: 10px;
                         text-align: center;
@@ -113,7 +113,7 @@ app.post('/submit-data', (req, res) => {
                         background-color: hsla(0,0%,100%,.4);
                         align-items: center;
                         gap: 20px;
-                        margin-top: 12px;
+                        margin-top: -19px;
                         border: 2px solid transparent;
                         padding: 10px;
                         border-radius: 10px;
@@ -135,7 +135,7 @@ app.post('/submit-data', (req, res) => {
                     .user-container {
                         text-align: center;
                         padding: 20px;
-                        margin-top: 35px;
+                        margin-top: 21px;
                         font-size: 30px;
                         color: white;
                         border-radius: 5px;
@@ -143,38 +143,38 @@ app.post('/submit-data', (req, res) => {
                         
                     }
                     .user-image {
-                        width: 100px;
-                        height: 100px;
-                        border-radius: 50%;
-                        margin-top: 1px;
+                        width: 168px;            
+                        height: 168px;          
+                        border-radius: 50%;      
+                        margin: 0 auto;          
+                        display: block;          
                         background-image: url(${userInfo.image});
-                        border-radius: 50%;
-                        background-size: cover ;
+                        background-size: cover;
                         background-repeat: no-repeat;
-                        border: 1px solid red; 
-                        padding: 0px;  
-                        margin: 0px;
-                        overflow-clip-margin: content-box;
-                        overflow: clip;
-                        aspect-ratio: auto 150/ 150;
-                        box-sizing: border-box;
-                    }
-                    .custom-footer {
+                        border: 1px solid darkgrey;   
+                        box-sizing: border-box;  
+                        
+                        color: transparent;
                        
-                        color: white;
-                        margin-top: 18px;
-                        margin: 10px;
-                        text-align: center;
-                        font-family: JetBrains mono;
-                         background-color: black;
-                            color: white; /* Text color for visibility against the black background */
-                            padding: 10px; /* Add some padding for aesthetics */
-                            text-align: center; /* Center align the content */
-                            position: absolute; /* Position it at the bottom */
-                            width: 100%; /* Full width */
-                            bottom: 0; /* Stick it to the bottom */
-                            padding-top: 10px;
-                        }
+                       
+                    }
+                    
+                    .custom-footer {
+                    color:  #CCCCCC;
+                    margin: -7px;
+                    height: 2.5rem;
+                    text-align: center;
+                    font-family: JetBrains mono;
+                    background-color: black;
+                    padding: 3px;            /* Adjust padding if necessary */
+                    font-size: 13px;         /* Decrease the font size to your desired size */
+                    position: fixed;
+                    width: 100%;
+                    bottom: 0;
+                     z-index: 1000;
+}
+
+                    
                         
                     }
                 </style>
