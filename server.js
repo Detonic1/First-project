@@ -28,12 +28,12 @@ function generateBackgroundColor(email) {
  
     
    
-  
+    
 }
 
 const storage = multer.diskStorage({
     destination: './public/uploads/',
-    filename: function(req, file, cb) {
+    filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
@@ -197,21 +197,21 @@ app.post('/submit-data', (req, res) => {
                        <div class="logos">
                         <div>
                         <a href="${userInfo.linkedin}" target="_blank"> 
-                        <img src="linkedin.jpg">
+                        <img src="" alt="">
                         <span>LinkedIn</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.github}" target="_blank"> 
-                        <img src="github.png">
+                        <img src="" alt="">
                         <span>GitHub</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.discord}" target="_blank">
-                        <img src="discord.png"
+                        <img src="" alt="">
                         <span>Discord</span>
                     </a>
                     
@@ -242,6 +242,33 @@ app.post('/submit-data', (req, res) => {
         }
     });
 });
+
+
+
+
+
+
+// Create a new image element
+var img = document.createElement('img');
+
+// Set attributes for the image
+img.src = './First-project/discord.png'; // Set the image source
+img.alt = 'discord'; // Set the alt text for accessibility
+img.width = 200; // Set the width of the image (optional)
+img.height = 150; // Set the height of the image (optional)
+
+// Create a new div element
+var div = document.createElement('div');
+
+// Append the image element to the div
+div.appendChild(img);
+
+// Get the reference to the element where you want to append this div
+var container = document.getElementById('yourContainerID'); // Replace 'yourContainerID' with the ID of the container element
+
+// Append the div containing the image to the container element
+container.appendChild(div);
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'My Path to Tech', 'tech2.html'));
