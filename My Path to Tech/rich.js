@@ -52,3 +52,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// Create a new image element
+var img = document.createElement('img');
+
+// Set attributes for the image
+img.src = './First-project/discord.png'; // Set the image source
+img.alt = 'discord'; // Set the alt text for accessibility
+img.width = 200; // Set the width of the image (optional)
+img.height = 150; // Set the height of the image (optional)
+
+// Create a new div element
+var div = document.createElement('div');
+
+// Append the image element to the div
+div.appendChild(img);
+
+// Get the reference to the element where you want to append this div
+var container = document.getElementById('yourContainerID'); // Replace 'yourContainerID' with the ID of the container element
+
+// Append the div containing the image to the container element
+container.appendChild(div);

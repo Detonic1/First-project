@@ -28,12 +28,12 @@ function generateBackgroundColor(email) {
  
     
    
-    
+  
 }
 
 const storage = multer.diskStorage({
     destination: './public/uploads/',
-    filename: function (req, file, cb) {
+    filename: function(req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
@@ -126,7 +126,7 @@ app.post('/submit-data', (req, res) => {
                     .logos img {
                         width: 50px;
                         height: 50px;
-                        display: block;
+                    //     display: block;
                     }
                     .logos span {
                         display: block;
@@ -167,8 +167,8 @@ app.post('/submit-data', (req, res) => {
                     text-align: center;
                     font-family: JetBrains mono;
                     background-color: black;
-                    padding: 3px;            /* Adjust padding if necessary */
-                    font-size: 13px;         /* Decrease the font size to your desired size */
+                    padding: 3px;            
+                    font-size: 13px;        
                     position: fixed;
                     width: 100%;
                     bottom: 0;
@@ -192,26 +192,26 @@ app.post('/submit-data', (req, res) => {
                 <div class="user-container">
                     <img class="user-image" src="${userInfo.image}" alt="User Image">
                     <h2>${userInfo.name}</h2>
-                    <!-- ... (rest of your HTML content) ... -->
+                    
                 </div>
                        <div class="logos">
                         <div>
                         <a href="${userInfo.linkedin}" target="_blank"> 
-                        <img src="" alt="">
+                        <img src="/images/linkedin.jpg">
                         <span>LinkedIn</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.github}" target="_blank"> 
-                        <img src="" alt="">
+                        <img src="github.png">
                         <span>GitHub</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.discord}" target="_blank">
-                        <img src="" alt="">
+                        <img src="">
                         <span>Discord</span>
                     </a>
                     
@@ -232,7 +232,8 @@ app.post('/submit-data', (req, res) => {
                
                 <div/>
 
-
+                
+               
                
             </body>
             </html>
@@ -243,33 +244,6 @@ app.post('/submit-data', (req, res) => {
     });
 });
 
-
-
-
-
-
-// Create a new image element
-var img = document.createElement('img');
-
-// Set attributes for the image
-img.src = './First-project/discord.png'; // Set the image source
-img.alt = 'discord'; // Set the alt text for accessibility
-img.width = 200; // Set the width of the image (optional)
-img.height = 150; // Set the height of the image (optional)
-
-// Create a new div element
-var div = document.createElement('div');
-
-// Append the image element to the div
-div.appendChild(img);
-
-// Get the reference to the element where you want to append this div
-var container = document.getElementById('yourContainerID'); // Replace 'yourContainerID' with the ID of the container element
-
-// Append the div containing the image to the container element
-container.appendChild(div);
-
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'My Path to Tech', 'tech2.html'));
 });
@@ -277,3 +251,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+
