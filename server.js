@@ -79,7 +79,7 @@ app.post('/submit-data', (req, res) => {
                   body {
                         background-image: ${userInfo.backgroundColor};
                        
-                        background-repeat: no-repeat;
+                         background-repeat: no-repeat;
                         background-size: cover;
                         justify-content: center;
                         align-items: center;
@@ -126,12 +126,12 @@ app.post('/submit-data', (req, res) => {
                     .logos img {
                         width: 50px;
                         height: 50px;
-                    //     display: block;
+                        display: block;
                     }
                     .logos span {
                         display: block;
                         text-align: center;
-                        font-weight: bold; /* Making the text bolder */
+                        font-weight: bold; 
                     }
                     .user-container {
                         text-align: center;
@@ -182,13 +182,13 @@ app.post('/submit-data', (req, res) => {
                 </style>
             </head>
             <body>
+
              <div class="navbar">
                     <a href="#">Resume</a>
                     <a href="#">Project</a>
                     <a href="#">About</a>
                 </div>
-                <!-- Your HTML content here -->
-                <!-- For example: -->
+               
                 <div class="user-container">
                     <img class="user-image" src="${userInfo.image}" alt="User Image">
                     <h2>${userInfo.name}</h2>
@@ -196,29 +196,30 @@ app.post('/submit-data', (req, res) => {
                 </div>
                        <div class="logos">
                         <div>
+                        
                         <a href="${userInfo.linkedin}" target="_blank"> 
-                        <img src="/images/linkedin.jpg">
+                        <img src="/images/linkedIn.png">
                         <span>LinkedIn</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.github}" target="_blank"> 
-                        <img src="github.png">
+                        <img src="/images/github.png">
                         <span>GitHub</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="${userInfo.discord}" target="_blank">
-                        <img src="">
+                        <img src="/images/discord.png">
                         <span>Discord</span>
                     </a>
                     
                         </div>
                         <div>
                         <a href="mailto:${userInfo.email}" target="_blank"> 
-                        <img src="">
+                        <img src="/images/Gmail.png">
                         <span>Email</span>
                     </a>
                     
@@ -245,10 +246,13 @@ app.post('/submit-data', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'My Path to Tech', 'tech2.html'));
+    res.sendFile(path.join(__dirname, 'My Path to Tech', 'tech2.html',));
 });
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+
+
+app.use('/images', express.static(path.join(__dirname, 'images', )));
 
