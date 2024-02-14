@@ -5,44 +5,199 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <title>Online Booking</title>
+    <link rel="stylesheet" href="./tech2.css">
+    <title>Portfolio builder</title>
 </head>
 
 <body>
     <div class="prince">
-       
 
-        <p class="Dan">Appointment</p>
+        <h4 class="Dan">Sign up </h4>
+        <p class="back">If you don't have an account</p>
+        <p class="center">You can <span class="register-link">Register here!</span></p>
         
 
-        <form id="signupForm" action="/submit-data" method="post">
-            <input type="text" name="firstName" placeholder="First Name" required><br>
-            <input type="text" name="middleName" placeholder="Middle Name" required><br>
-            <input type="text" name="lastName" placeholder="Last Name" required><br>
-            <input type="email" name="email" placeholder="Email" required><br>
+        <form id="signupForm" action="/submit-data" method="post" enctype="multipart/form-data">
+            <div class = "nutella">
+                <img src="./template-image/purple (1).png">
+
+            </div>
+            <div class = "kelly">
+                <img src="./template-image/purple (2).png">
+
+            </div>
+            <div class="alone">
+            <input type="text" name="firstName" placeholder="Enter your First Name" required><br>
+            <input type="text" name="middleName" placeholder="Enter your Middle Name" required><br>
+            <input type="text" name="lastName" placeholder="Enter your Last Name" required><br>
+            <input type="email" name="email" placeholder="Enter your Email" required><br>
+            <input type="password" id="password" name="Enter your password" placeholder="Enter your Password" required><br>
+            <input type="password" id="Confirm your Password" name="Enter your ConfirmPassword" placeholder="Confirm Password" required><br>
+            <select name="techCareer" required>
+                <option value="" disabled selected>Select a Tech Career</option>
+                <option value="" disabled selected>Select a Tech Career</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="Firmware Engineer">Firmware Engineer</option>
+                
             
-            <input type="password" id="password" name="password" placeholder="Password" required><br>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required><br>
             
-            <input type="text" name="githubLink" placeholder="GitHub Link" required><br>
-            <input type="text" name="linkedinLink" placeholder="LinkedIn Link" required><br>
-            <input type="file" name="userImage" accept="image/*" required><br>
+              
+            </option>
+            <option value="Game Developer">Game Developer
+            </option>
+             </option>
+              <option value="DevOps Engineer">DevOps Engineer
+                 </option>
+                </option>
+                <option value="Embedded Systems Developer">Embedded Systems Developer
+                </option>
+            </option>
+            <option value="Cloud Solutions Architect">Cloud Solutions Architect
+            </option>
+        </option>
+        <option value="API Developer">API Developer
+        </option>
+     </option>
+     <option value="Mobile App Developer">Mobile App Developer 
+     </option>
+    </option>
+    <option value="Full-stack Developer">Full-stack Developer
+  </option>
+ </option>
+<option value="Back-end Developer">Back-end Developer 
+</option>
+</option>
+<option value="Front-end Developer">Front-end Developer
+</option>
+</option>
+<option value="Data Scientist">Data Scientist 
+</option>
+</option>
+<option value="Data Analyst">Data Analyst
+</option>
+</option>
+<option value="Data Engineer">Data Engineer 
+</option>
+</option>
+<option value="Business Intelligence Analyst">Business Intelligence Analyst 
+</option>
+</option>
+<option value="Machine Learning Engineer">Machine Learning Engineer
+</option>
+</option>
+<option value="Big Data Engineer">Big Data Engineer
+</option>
+</option>
+<option value="Quantitative Analyst">Quantitative Analyst
+</option>
+</option>
+<option value="Database Administrator (DBA)">Database Administrator (DBA) 
+</option>
+</option>
+<option value="Cybersecurity Analyst">Cybersecurity Analyst
+</option>
+</option>
+<option value="Ethical Hacker">Ethical Hacker
+</option>
+</option>
+<option value="Information Security Manager ">Information Security Manager 
+</option>
+</option>
+<option value="Penetration Tester ">Penetration Tester 
+</option>
+</option>
+<option value="Security Consultant ">Security Consultant 
+</option>
+</option>
+<option value="Cryptographer">Cryptographer 
+</option>
+</option>
+<option value="Security Software Developer ">Security Software Developer 
+</option>
+<option value="Systems Administrator ">Systems Administrator 
+</option>
+<option value="Network Engineer">Network Engineer 
+</option>
+<option value="IT Support Specialist">IT Support Specialist
+</option>
+<option value="IT Project Manager">IT Project Manager 
+</option>
+<option value="Systems Analyst">Systems Analyst
+</option>
+<option value="Cloud Administrator ">Cloud Administrator 
+</option>
+<option value="Network Architect ">Network Architect 
+</option>
+<option value="Database Manager">Database Manager 
+</option>
+<option value="UI/UX Designer">UI/UX Designer 
+</option>
+<option value="Graphic Designer (for tech-related products) ">Graphic Designer (for tech-related products) 
+</option>
+<option value="Interaction Designer ">Interaction Designer 
+</option>
+<option value="User Researcher ">User Researcher 
+</option>
+<option value="Information Architect">Information Architect 
+</option>
+<option value="Quality Assurance Engineer">Quality Assurance Engineer 
+</option>
+<option value="Test Automation Engineer ">Test Automation Engineer 
+</option>
+<option value="Performance Tester">Performance Tester
+</option>
+<option value="Product Manager">Product Manager
+</option>
+<option value="Technical Product Manager ">Technical Product Manager 
+</option>
+<option value="Product Owner">Product Owner
+</option>
+<option value="Hardware Engineer">Hardware Engineer 
+</option>
+<option value="Semiconductor Engineer ">Semiconductor Engineer 
+</option>
+<option value="Robotics Engineer">Robotics Engineer 
+</option>
+<option value="IoT Specialist ">IoT Specialist 
+</option>
+<option value="System Integration Specialist">System Integration Specialist
+</option>
+<option value="Augmented Reality (AR) Developer ">Augmented Reality (AR) Developer 
+</option>
+<option value="Virtual Reality (VR) Developer">Virtual Reality (VR) Developer
+</option>
+<option value="Blockchain Developer ">Blockchain Developer 
+</option>
+<option value="Quantum Computing Specialist ">Quantum Computing Specialist 
+</option>
+<option value="3D Printing Specialist">3D Printing Specialist
+</option>
+            </select><br>
+            <input type="text" name="Enter your githubLink" placeholder="Enter your GitHub Link" required><br>
+            <input type="text" name="Enter your linkedinLink" placeholder="Enter your LinkedIn Link" required><br>
+            <input type="text" name="Enter your discordLink" placeholder="Enter your DiscordLink" required><br>
+            </div>
+            <div class = "real">
+                <img src="./template-image/temp3.png">
+
+            </div>
+            <!-- <div class = "nutella">
+                <img src="./template-image/purple (1).png">
+
+            </div> -->
+
+            <div class = "center">
+                 
+            </div>
             <button type="submit">Submit</button>
         </form>
-        
-<div id="errorContainer" style="color: red;"></div>
-
-        <br><br>
 
         
+
         <div class="login">
             <p>Already have an account? <a href="tech3.html">Log in</a></p>
         </div>
     </div>
-    <!-- <footer>
-        <p>CyberSpectrum Veterinary Design, Copyright &copy; 2020</p>
-    </footer> -->
     <script src="rich.js"></script>
 </body>
 
