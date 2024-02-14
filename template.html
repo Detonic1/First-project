@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+
+    <style>
+      body {
+          background: url("backgound1.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          justify-content: center;
+      }
+
+      .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 8vh;
+          z-index: 1000;
+          font-size: 19px;
+      }
+
+      .navbar a {
+          margin: 0 20px;
+          text-decoration: none;
+          color: white;
+          font-family: JetBrains mono;
+          font-weight: bold;
+      }
+
+      .logo img{
+          width: 33vw;
+          height: auto;
+          margin-top: 2vh;
+          margin-left: 60vw;
+      }
+
+      h1 {
+          margin-top: 200px;
+          margin-left: 80px;
+          color: whitesmoke;
+      }
+
+      .hand img {
+          width: 30px;
+          height: 30px;
+          margin-top: -25px;  /* Adjusted margin-top to position it directly after "Hi There!" */
+          margin-left: 10px; /* Adjusted margin-left to align with "Hi There!" */
+      }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Resume</a>
+        <a href="#">Project</a>
+        <a href="#">About</a>
+    </div>
+    <div class="consent">
+        <h1>Hi There!<span class="hand"><img src="./hand.gif"></span></h1>
+    </div>
+    
+    <div class="logo">
+        <img src="./logo.png">
+    </div>
+    <script src="./server.js">
+        <h2></h2>
+    </script>
+</body>
+</html>
+

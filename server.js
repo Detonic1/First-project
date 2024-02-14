@@ -9,7 +9,7 @@ const port = 3000;
 const users = [];
 
 function generateBackgroundColor(email) {
- return `linear-gradient(29.93deg, #42496f,
+    return `linear-gradient(29.93deg, #42496f,
          rgba(66,73,111,0) 37.51%), 
          linear-gradient(186.09deg, #434f6c, 
             rgba(67,79,108,0) 39.79%), 
@@ -24,16 +24,11 @@ function generateBackgroundColor(email) {
                             linear-gradient(0deg, #fff, #fff),
                              linear-gradient(0deg, hsla(0,0%,100%,.05),
                               hsla(0,0%,100%,.05));`;
-
- 
-    
-   
-  
 }
 
 const storage = multer.diskStorage({
     destination: './public/uploads/',
-    filename: function(req, file, cb) {
+    filename: function (req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
@@ -55,7 +50,7 @@ app.post('/submit-data', (req, res) => {
             res.send('An error occurred.');
         } else {
             const formData = req.body;
-            const userImage = req.file ? `/uploads/${req.file.filename}` : null;
+            const techCareer = req.body.techCareer;
 
             const userInfo = {
                 name: `${formData.firstName} ${formData.middleName} ${formData.lastName}`,
@@ -63,8 +58,9 @@ app.post('/submit-data', (req, res) => {
                 github: formData.githubLink,
                 linkedin: formData.linkedinLink,
                 discord: formData.discordLink,
-                image: userImage,
-                backgroundColor: generateBackgroundColor(formData.email)
+                image: req.file ? `/uploads/${req.file.filename}` : null,
+                backgroundColor: generateBackgroundColor(formData.email),
+                techCareer: techCareer
             };
 
             users.push(userInfo);
@@ -76,17 +72,17 @@ app.post('/submit-data', (req, res) => {
                 <meta charset="UTF-8">
                 <title>User Profile</title>
                 <style>
-                  body {
+                    body {
                         background-image: ${userInfo.backgroundColor};
-                       
-                         background-repeat: no-repeat;
+                        background-repeat: no-repeat;
                         background-size: cover;
                         justify-content: center;
                         align-items: center;
                         height: 100vh;
+                        
                     }
                     
-                        .navbar {
+                    .navbar {
                         display: flex;
                         background-color: rgba(0,0,0,.5);
                         justify-content: center;
@@ -104,10 +100,9 @@ app.post('/submit-data', (req, res) => {
                         font-family: JetBrains mono;
                         font-weight: bold;
                     }
-                a{
-                    color: white;                  
-                    
-                }
+                    a {
+                        color: white;
+                    }
                     .logos {
                         display: flex;
                         justify-content: space-around;
@@ -118,7 +113,7 @@ app.post('/submit-data', (req, res) => {
                         border: 2px solid transparent;
                         padding: 10px;
                         border-radius: 10px;
-                        width: 80%; /* Adjusting the width for responsiveness */
+                        width: 80%;
                         margin-left: auto;
                         margin-right: auto;
                         max-width: 289px;
@@ -131,7 +126,7 @@ app.post('/submit-data', (req, res) => {
                     .logos span {
                         display: block;
                         text-align: center;
-                        font-weight: bold; 
+                        font-weight: bold;
                     }
                     .user-container {
                         text-align: center;
@@ -141,118 +136,96 @@ app.post('/submit-data', (req, res) => {
                         color: white;
                         border-radius: 5px;
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-                        
                     }
                     .user-image {
-                        width: 168px;            
-                        height: 168px;          
-                        border-radius: 50%;      
-                        margin: 0 auto;          
-                        display: block;          
-                        
+                        width: 168px;
+                        height: 168px;
+                        border-radius: 50%;
+                        margin: 0 auto;
+                        display: block;
                         background-size: cover;
-                        background-repeat: no-repeat;
-                        border: 1px solid darkgrey;   
-                        box-sizing: border-box;  
                         
+                        border: 1px solid darkgrey;
+                        box-sizing: border-box;
                         color: transparent;
-                       
-                       
+                        overflow: hidden;
                     }
-                    
                     .custom-footer {
-                    color:  #CCCCCC;
-                    margin: -7px;
-                    height: 2.5rem;
-                    text-align: center;
-                    font-family: JetBrains mono;
-                    background-color: black;
-                    padding: 3px;            
-                    font-size: 13px;        
-                    position: fixed;
-                    width: 100%;
-                    bottom: 0;
-                     z-index: 1000;
-}
-
-                    
-                        
+                        color:  #CCCCCC;
+                        margin: -7px;
+                        height: 2.5rem;
+                        text-align: center;
+                        font-family: JetBrains mono;
+                        background-color: black;
+                        padding: 3px;
+                        font-size: 13px;
+                        position: fixed;
+                        width: 100%;
+                        bottom: 0;
+                        z-index: 1000;
                     }
-                   
+                    a:link, a:visited {
+                        text-decoration: none;
+                    }
                 </style>
             </head>
             <body>
-
-             <div class="navbar">
+                <div class="navbar">
                     <a href="#">Resume</a>
                     <a href="#">Project</a>
                     <a href="#">About</a>
                 </div>
-               
                 <div class="user-container">
                     <img class="user-image" src="${userInfo.image}" alt="User Image">
                     <h2>${userInfo.name}</h2>
-                    
+                    <p style="font-size: 26px; margin-top: -32px; font-weight: bold;">${userInfo.techCareer}</p> 
                 </div>
-                       <div class="logos">
-                        <div>
-                        
+                <div class="logos">
+                    <div>
                         <a href="${userInfo.linkedin}" target="_blank"> 
-                        <img src="/images/linkedIn.png">
-                        <span>LinkedIn</span>
-                    </a>
-                    
-                        </div>
-                        <div>
-                        <a href="${userInfo.github}" target="_blank"> 
-                        <img src="/images/github.png">
-                        <span>GitHub</span>
-                    </a>
-                    
-                        </div>
-                        <div>
-                        <a href="${userInfo.discord}" target="_blank">
-                        <img src="/images/discord.png">
-                        <span>Discord</span>
-                    </a>
-                    
-                        </div>
-                        <div>
-                        <a href="mailto:${userInfo.email}" target="_blank"> 
-                        <img src="/images/Gmail.png">
-                        <span>Email</span>
-                    </a>
-                    
-                        </div>
-                        <footer class="custom-footer">
-                         Designed & Built by ${userInfo.name} using 
-                         <span>[Javascript, React, HTML/CSS]</span>
-                        </footer>
-
+                            <img src="/images/linkedIn.png">
+                            <span>LinkedIn</span>
+                        </a>
                     </div>
-               
-                <div/>
-
-                
-               
-               
+                    <div>
+                        <a href="${userInfo.github}" target="_blank"> 
+                            <img src="/images/github.png">
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="${userInfo.discord}" target="_blank">
+                            <img src="/images/discord.png">
+                            <span>Discord</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="mailto:${userInfo.email}" target="_blank"> 
+                            <img src="/images/Gmail.png">
+                            <span>Email</span>
+                        </a>
+                    </div>
+                    <footer class="custom-footer">
+                        Designed & Built by ${userInfo.name} using 
+                        <span>[Javascript, React, HTML/CSS]</span>
+                    </footer>
+                </div>
             </body>
-            </html>
-            `;
+            </html>`;
 
             res.send(styledResponse);
         }
     });
 });
 
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'My Path to Tech', 'tech2.html',));
+    res.sendFile(path.join(__dirname, 'My Path to Tech', 'tech2.html'));
 });
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
 
-
-app.use('/images', express.static(path.join(__dirname, 'images', )));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
